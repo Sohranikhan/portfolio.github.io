@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+   .main{
+     position: relative;
+     width: 100%;
+     height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     text-align: center;
+    padding-bottom: 2rem;
+    }
+    .main::after{
+      content:"";
+      position: absolute;
+      width: 100%;
+      height: 600px;
+      top: 0;
+      left:0;
+      background: rgba(100, 0, 200, 0.20);
+      z-index: 1;
+    }
+   .big{
+     font-size: 6rem;
+     color: white;
+     z-index: 2;
+     text-shadow: 1px 1px 6px white;
+   }
+   .small{
+     font-size: 1.9rem;
+     color: white;
+      z-index: 2;
+      text-shadow: 1px 1px 2px white;
+   }
+   .navbar{
+     width: 100%;
+     height: 46px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background: whitesmoke;
+   }
+   .logo{
+     margin: 0 1rem;
+     color: #2e2e2e;
+   }
+   .bur1,.bur2,.bur3{
+  
+  height: 4px;
+  background: #2e2e2e;
+  margin: 2px;
+  border-radius: 14px;
+}
+.bur1{
+  width: 15px;
+}
+.bur2{
+  width: 35px;
+}
+.bur3{
+  width: 15px;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  margin: auto 1rem;
+  align-items: center;
+}
+.button{
+  display: flex;
+  margin-top: 1.5rem;
+}
+#but{
+  background: rgba(255, 255, 255, 0.30);
+  color: white;
+  padding:0 1rem;
+}
+#but , #but1{
+  width: auto;
+  height: 45px;
+  font-size: 18px;
+  z-index: 2;
+  margin: 0 0.51rem;
+  border: 1.5px solid white;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+#but1{
+  background: rgba(255, 255, 255, 0.90);
+  padding: 0 1.4rem;
+  color: crimson;
+}
+.admin{
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+  color: white;
+  z-index: 2;
+}
+.admin span{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: gold;
+  text-shadow: 0.1px 0.1px 1px black;
+}
+   @media (max-width:600px){
+     .big{
+       font-size: 5rem;
+     }
+     .small{
+       font-size: 1rem;
+     }
+   }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <h1 class="logo">PAK🇵🇰</h1>
+   <div class="all">
+     <div class="bur1"></div>
+     <div class="bur2"></div>
+     <div class="bur3"></div>
+   </div>
+  </div>
+<div class="main">
+  <h1 class="big">hi there!</h1>
+  <h3 class="small">We're amazing colorful<br>HTML,CSS & JavaScript Theme</h3>
+  <div class="button">
+    <button id="but">Start Free</button>
+    <button id="but1">Use Pro</button>
+  </div>
+  
+  <h5 class="admin">Made by <br><span>Amir Sohail</span></h5>
+</div>
+<script>
+  let chimg = document.querySelector('.main');
+  const back=["5.png","2.png","3.png","4.png","1.png"];
+  
+ 
+  let one= -1;
+  function indexa(){
+    
+    let tot=one +=1;
+    
+    if(tot>back.length-2){
+      one=-1;
+    }
+    chimg.style.background=`url(${back[tot]})`;
+    chimg.style.transition="1s ease-in";
+    chimg.style.backgroundSize='cover';
+    chimg.style.backgroundPosition='center';
+  }
+  indexa();
+  setInterval(indexa ,4000);
+  
+</script>
+</body>
+
+</html>
